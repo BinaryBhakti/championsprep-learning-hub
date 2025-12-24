@@ -20,6 +20,7 @@ import PaymentSuccess from "./pages/payment/Success";
 import PaymentFailure from "./pages/payment/Failure";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
+import ParentDashboard from "./pages/ParentDashboard";
 
 const queryClient = new QueryClient();
 
@@ -109,6 +110,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <Admin />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/parent"
+        element={
+          <ProtectedRoute>
+            <ParentDashboard />
           </ProtectedRoute>
         }
       />
