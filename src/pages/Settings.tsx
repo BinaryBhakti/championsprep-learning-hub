@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import { 
   Select, 
   SelectContent, 
@@ -24,16 +25,21 @@ import { toast } from "sonner";
 
 export default function Settings() {
   const { user } = useAuth();
+  const { theme, setTheme } = useTheme();
   const [name, setName] = useState(user?.name || "");
   const [phone, setPhone] = useState("");
   const [school, setSchool] = useState("");
   const [grade, setGrade] = useState<string>("12");
   const [board, setBoard] = useState<string>("CBSE");
   const [language, setLanguage] = useState<string>("en");
-  const [theme, setTheme] = useState<string>("egyptian-night");
 
   const handleSaveProfile = () => {
     toast.success("Profile updated successfully!");
+  };
+
+  const handleThemeChange = (newTheme: "egyptian-night" | "chai-spice") => {
+    setTheme(newTheme);
+    toast.success(`Theme changed to ${newTheme === "egyptian-night" ? "Egyptian Night" : "Chai Spice"}!`);
   };
 
   return (
@@ -179,7 +185,7 @@ export default function Settings() {
             <div className="space-y-4">
               <div>
                 <Label>Color Theme</Label>
-                <Select value={theme} onValueChange={setTheme}>
+                <Select value={theme} onValueChange={(v) => handleThemeChange(v as "egyptian-night" | "chai-spice")}>
                   <SelectTrigger className="mt-1.5">
                     <SelectValue />
                   </SelectTrigger>
@@ -192,7 +198,7 @@ export default function Settings() {
 
               <div className="grid grid-cols-2 gap-3 mt-4">
                 <button
-                  onClick={() => setTheme("egyptian-night")}
+                  onClick={() => handleThemeChange("egyptian-night")}
                   className={`p-4 rounded-xl border-2 transition-all ${
                     theme === "egyptian-night" 
                       ? "border-primary bg-primary/10" 
@@ -203,7 +209,7 @@ export default function Settings() {
                   <span className="text-sm text-foreground">Egyptian Night</span>
                 </button>
                 <button
-                  onClick={() => setTheme("chai-spice")}
+                  onClick={() => handleThemeChange("chai-spice")}
                   className={`p-4 rounded-xl border-2 transition-all ${
                     theme === "chai-spice" 
                       ? "border-primary bg-primary/10" 
