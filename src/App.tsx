@@ -22,6 +22,8 @@ import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
 import ParentDashboard from "./pages/ParentDashboard";
 import Gamification from "./pages/Gamification";
+import Challenges from "./pages/Challenges";
+import Groups from "./pages/Groups";
 
 const queryClient = new QueryClient();
 
@@ -127,6 +129,22 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <Gamification />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/challenges"
+        element={
+          <ProtectedRoute>
+            <Challenges />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/groups"
+        element={
+          <ProtectedRoute>
+            <Groups />
           </ProtectedRoute>
         }
       />
