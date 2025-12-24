@@ -19,6 +19,7 @@ import Privacy from "./pages/Privacy";
 import PaymentSuccess from "./pages/payment/Success";
 import PaymentFailure from "./pages/payment/Failure";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -100,6 +101,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <Settings />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute>
+            <Admin />
           </ProtectedRoute>
         }
       />
