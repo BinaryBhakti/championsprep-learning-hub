@@ -1,5 +1,5 @@
 import { useAuth } from "@/contexts/AuthContext";
-import { Flame, Trophy, Target, TrendingUp } from "lucide-react";
+import { Flame, Trophy, Target, TrendingUp, Coins } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface StatCardProps {
@@ -12,7 +12,7 @@ interface StatCardProps {
 
 function StatCard({ icon, label, value, subtext, gradient }: StatCardProps) {
   return (
-    <div className="arcade-card !p-4">
+    <div className="arcade-card !p-4 hover-scale">
       <div className="relative z-10 flex items-center gap-4">
         <div
           className={cn(
@@ -40,18 +40,17 @@ export function StatsOverview() {
 
   const stats = [
     {
-      icon: <Flame className="h-6 w-6 text-white animate-streak-flame" />,
-      label: "Current Streak",
-      value: user.studyStreak.current,
-      subtext: `Best: ${user.studyStreak.longest} days`,
-      gradient: "from-orange-500 to-red-500",
+      icon: <Coins className="h-6 w-6 text-white" />,
+      label: "Coin Balance",
+      value: user.coins,
+      gradient: "from-yellow-500 to-amber-500",
     },
     {
-      icon: <Trophy className="h-6 w-6 text-white" />,
-      label: "Grade",
-      value: `Class ${user.grade}`,
-      subtext: user.educationBoard,
-      gradient: "from-yellow-500 to-amber-500",
+      icon: <Flame className="h-6 w-6 text-white" />,
+      label: "Current Streak",
+      value: `${user.studyStreak.current} days`,
+      subtext: `Best: ${user.studyStreak.longest} days`,
+      gradient: "from-orange-500 to-red-500",
     },
     {
       icon: <Target className="h-6 w-6 text-white" />,
@@ -74,7 +73,7 @@ export function StatsOverview() {
       {stats.map((stat, index) => (
         <div
           key={stat.label}
-          className="animate-slide-up"
+          className="animate-fade-in"
           style={{ animationDelay: `${index * 100}ms` }}
         >
           <StatCard {...stat} />
