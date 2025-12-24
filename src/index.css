@@ -67,58 +67,69 @@
   }
 
   .chai-spice {
-    /* Chai Spice Theme - Warm */
-    --background: 30 30% 96%;
-    --foreground: 25 40% 15%;
+    /* Chai Spice Theme - Warm Indian Tea Palette */
+    /* Background: Creamy Foam #FFF9F2 */
+    --background: 30 100% 97%;
+    /* Text: Roasted Bean #451A03 */
+    --foreground: 21 93% 14%;
 
-    --card: 30 25% 92%;
-    --card-foreground: 25 40% 15%;
+    /* Card: White Steeper #FFFFFF */
+    --card: 0 0% 100%;
+    --card-foreground: 21 93% 14%;
 
-    --popover: 30 20% 95%;
-    --popover-foreground: 25 40% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 21 93% 14%;
 
-    --primary: 25 90% 50%;
-    --primary-foreground: 30 30% 98%;
+    /* Primary: Darjeeling Orange #D97706 */
+    --primary: 32 95% 44%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 25% 85%;
-    --secondary-foreground: 25 40% 15%;
+    /* Secondary: Cinnamon Brown #78350F */
+    --secondary: 25 79% 26%;
+    --secondary-foreground: 30 100% 97%;
 
-    --muted: 35 20% 88%;
-    --muted-foreground: 25 15% 45%;
+    /* Muted: Dusty Ginger #92400E */
+    --muted: 30 50% 92%;
+    --muted-foreground: 24 83% 31%;
 
-    --accent: 15 85% 45%;
-    --accent-foreground: 30 30% 98%;
+    /* Accent: Darjeeling Orange variant */
+    --accent: 32 95% 44%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 30 30% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 80%;
-    --input: 35 20% 85%;
-    --ring: 25 90% 50%;
+    /* Border: Cinnamon Brown lighter */
+    --border: 25 30% 80%;
+    --input: 30 40% 90%;
+    --ring: 32 95% 44%;
 
-    --gold: 45 100% 45%;
-    --gold-foreground: 30 30% 98%;
-    --success: 142 60% 40%;
+    /* Gold/Coins: Saffron Gold #F59E0B */
+    --gold: 38 92% 50%;
+    --gold-foreground: 21 93% 14%;
+    /* Success: Cardamom Green #166534 */
+    --success: 149 64% 24%;
+    /* Warning: Saffron Gold #F59E0B */
     --warning: 38 92% 50%;
-    --streak: 25 100% 50%;
+    --streak: 38 92% 50%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(25 90% 50%) 0%, hsl(15 85% 45%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(30 25% 94%) 0%, hsl(30 25% 90%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(35 100% 45%) 100%);
-    --gradient-arcade: linear-gradient(180deg, hsl(25 40% 85%) 0%, hsl(30 25% 92%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(32 95% 44%) 0%, hsl(25 79% 26%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(30 100% 97%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(32 95% 44%) 100%);
+    --gradient-arcade: linear-gradient(180deg, hsl(30 60% 95%) 0%, hsl(30 100% 97%) 100%);
 
-    --shadow-glow: 0 0 30px hsl(25 90% 50% / 0.2);
-    --shadow-card: 0 8px 32px hsl(25 30% 20% / 0.1);
-    --shadow-gold: 0 0 20px hsl(45 100% 50% / 0.3);
+    --shadow-glow: 0 0 30px hsl(32 95% 44% / 0.25);
+    --shadow-card: 0 8px 32px hsl(21 93% 14% / 0.08);
+    --shadow-gold: 0 0 20px hsl(38 92% 50% / 0.35);
 
-    --sidebar-background: 30 25% 94%;
-    --sidebar-foreground: 25 40% 15%;
-    --sidebar-primary: 25 90% 50%;
-    --sidebar-primary-foreground: 30 30% 98%;
-    --sidebar-accent: 35 25% 88%;
-    --sidebar-accent-foreground: 25 40% 15%;
-    --sidebar-border: 35 20% 82%;
-    --sidebar-ring: 25 90% 50%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 21 93% 14%;
+    --sidebar-primary: 32 95% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 50% 95%;
+    --sidebar-accent-foreground: 21 93% 14%;
+    --sidebar-border: 25 30% 85%;
+    --sidebar-ring: 32 95% 44%;
   }
 }
 
