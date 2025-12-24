@@ -7,6 +7,8 @@ import { StatsOverview } from "@/components/dashboard/StatsOverview";
 import { ProgressTracking } from "@/components/dashboard/ProgressTracking";
 import { ActivityTimeline } from "@/components/dashboard/ActivityTimeline";
 import { RecentTopics } from "@/components/dashboard/RecentTopics";
+import { StreakDisplay } from "@/components/gamification/StreakDisplay";
+import { DailyChallenge } from "@/components/gamification/DailyChallenge";
 import { useAuth } from "@/contexts/AuthContext";
 import { LEARNING_MODES } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -23,6 +25,7 @@ import {
   BarChart3,
   Users,
   Shield,
+  Trophy,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -107,13 +110,21 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Stats Overview */}
-        <div className="mb-8">
-          <StatsOverview />
+        {/* Stats Overview with Streak */}
+        <div className="flex flex-col lg:flex-row gap-4 mb-8">
+          <div className="flex-1">
+            <StatsOverview />
+          </div>
+          <div className="lg:w-auto flex items-center">
+            <Link to="/gamification">
+              <StreakDisplay variant="compact" />
+            </Link>
+          </div>
         </div>
 
-        {/* Recent Topics - Quick Access */}
-        <div className="mb-8">
+        {/* Daily Challenge & Recent Topics */}
+        <div className="grid gap-4 lg:grid-cols-2 mb-8">
+          <DailyChallenge />
           <RecentTopics onSelectTopic={handleRecentTopicSelect} />
         </div>
 
@@ -187,14 +198,14 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                <div className="arcade-card !p-4 cursor-pointer hover:border-primary/50 hover-scale" onClick={() => navigate("/leaderboard")}>
+                <div className="arcade-card !p-4 cursor-pointer hover:border-primary/50 hover-scale" onClick={() => navigate("/gamification")}>
                   <div className="relative z-10 flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 text-white">
-                      📊
+                      <Trophy className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Leaderboard</h3>
-                      <p className="text-sm text-muted-foreground">See top performers</p>
+                      <h3 className="font-semibold">Achievements</h3>
+                      <p className="text-sm text-muted-foreground">View badges & leaderboard</p>
                     </div>
                   </div>
                 </div>

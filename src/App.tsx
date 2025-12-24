@@ -21,6 +21,7 @@ import PaymentFailure from "./pages/payment/Failure";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
 import ParentDashboard from "./pages/ParentDashboard";
+import Gamification from "./pages/Gamification";
 
 const queryClient = new QueryClient();
 
@@ -118,6 +119,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <ParentDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/gamification"
+        element={
+          <ProtectedRoute>
+            <Gamification />
           </ProtectedRoute>
         }
       />
