@@ -43,8 +43,8 @@ export function DailyChallenge() {
 
   return (
     <Card className={cn(
-      "rounded-3xl overflow-hidden transition-all",
-      isComplete && !challenge.completed && "ring-2 ring-success ring-offset-2"
+      "rounded-3xl overflow-hidden transition-all bg-card/50 backdrop-blur-sm border-border/50",
+      isComplete && !challenge.completed && "ring-2 ring-success ring-offset-2 ring-offset-background"
     )}>
       <div className={cn(
         "p-4 flex items-center justify-between",
