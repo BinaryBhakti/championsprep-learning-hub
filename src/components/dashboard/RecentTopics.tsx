@@ -10,8 +10,8 @@ interface RecentTopicsProps {
 
 export function RecentTopics({ onSelectTopic }: RecentTopicsProps) {
   return (
-    <Card className="rounded-3xl">
-      <CardContent className="p-4">
+    <Card className="rounded-3xl bg-card/50 backdrop-blur-sm border-border/50">
+      <CardContent className="p-5">
         <div className="flex items-center gap-2 mb-4">
           <History className="h-5 w-5 text-primary" />
           <h3 className="font-semibold">Continue Learning</h3>
